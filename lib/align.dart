@@ -1,4 +1,3 @@
-import 'package:first_flutter_app/inputTest.dart';
 import 'package:flutter/material.dart';
 
 class AlignTestPage extends StatelessWidget {
@@ -10,13 +9,7 @@ class AlignTestPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.arrow_forward),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => InputTest(),
-                  ));
-            },
+            onPressed: () {},
           )
         ],
       ),

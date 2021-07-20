@@ -6,8 +6,11 @@ class InputTest extends StatefulWidget {
 }
 
 class _InputState extends State<InputTest> {
-  String name;
-  final myController = TextEditingController();
+  final items = List<Widget>.generate(10000, (i) {
+    return Center(
+      child: Text("Item $i"),
+    );
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +20,9 @@ class _InputState extends State<InputTest> {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: '名前',
-              ),
-              onChanged: (text) {
-                name = text;
-              },
-            ),
-            TextField(
-              controller: myController,
-              decoration: InputDecoration(hintText: "趣味"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                final hobbyText = myController.text;
-              },
-              child: Text("新規登録"),
-            ),
-          ],
+        child: GridView.count(
+          crossAxisCount: 2,
+          children: items,
         ),
       ),
     );
